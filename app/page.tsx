@@ -18,13 +18,13 @@ const Home = () => {
   return (
     <section className="w-full h-dvh bg-instagram">
       {/* content */}
-      <div className="w-full h-full flex justify-center items-center p-3">
+      <div className="w-full h-full flex justify-center items-center p-[14px]">
         
         <form className="flex flex-col">
           <label htmlFor="">Write Message as Annonim</label>
-          <textarea name="" id=""></textarea>
+          <textarea name="" id="" cols={100} ></textarea>
 
-          <div className="w-full flex justify-end mt-4">
+          <div className="w-full flex justify-end mt-7">
             <button type="button" className="inline-flex h-12 items-center justify-center rounded-md bg-oceanic pl-5 pr-6 font-medium transition active:scale-110 gap-2" onClick={handleSendAction}>
               {!isLoading ? (
                 <>
