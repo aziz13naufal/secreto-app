@@ -19,8 +19,8 @@ label {
 }
 
 
-textarea {
-  @apply text-zinc-950 focus:outline-none px-3 py-2 w-full sm:w-96 h-52 rounded-md shadow-lg focus:outline-blue-500
+input {
+  @apply text-zinc-950 focus:outline-none p-4 w-full sm:w-[400px] rounded-md shadow-lg focus:outline-blue-500 flex
 }
 
 button {
