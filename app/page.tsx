@@ -1,56 +1,42 @@
 "use client"
-
 import { useState } from "react"
 import toast, { Toaster } from 'react-hot-toast';
 
-// component
-import PlaneIcon from "@/public/svg/PlaneIcon"
-import Spinner from "@/public/svg/Spinner"
+const Page = () => {
+    return (
+        <div className="w-full h-dvh p-4 bg-instagram flex items-center justify-center">
+            <div className="w-full p-4 bg-white/30 backdrop-blur-sm border border-zinc-200 rounded-lg">
+                <div className="">
+                    <h1 className="text-center font-semibold text-xl">Confes.In</h1>
+                    <h3 className="mt-3 font-normal">Selamat datang di Confes.In. Kirim ungkapanmu sekarang tanpa ketahuan!</h3>
+                </div>
 
-const Home = () => {
+                <div className="mt-4 flex flex-col gap-y-4">
+                    <input 
+                        type="text"
+                        placeholder="Dari" 
+                        className="w-full p-3 rounded-md bg-white/30 backdrop-blur-sm border border-zinc-200 font-medium placeholder:text-orange-800 focus:outline-blue-500"
+                    />
+                    <input 
+                        type="text"
+                        placeholder="Kepada" 
+                        className="w-full p-3 rounded-md bg-white/30 backdrop-blur-sm border border-zinc-200 font-medium placeholder:text-orange-800 focus:outline-blue-500"
+                    />
+                    <textarea 
+                        placeholder="Masukkan pesanmu..." 
+                        className="w-full h-32 p-3 rounded-md bg-white/30 backdrop-blur-sm border border-zinc-200 font-medium placeholder:text-orange-800 focus:outline-blue-500"
+                    />
+                    <button 
+                      className="mt-1 inline-flex h-12 items-center justify-center rounded-md bg-oceanic px-6 font-medium text-neutral-50 shadow-lg shadow-neutral-500/20 transition active:scale-95"
+                      onClick={() => toast("Pesanmu berhasil dikirim!")}
+                      >Kirim Pesan</button>
+                </div>
+            </div>
 
-  
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<any>('');
-
-  const handleChangeInput = (e: any) => {
-    const value = e.target.value
-    setInputValue(value)
-  }
-  
-  const handleSendAction = async () => {
-    setIsLoading(true)
-    await setTimeout(() => {
-      setIsLoading(false)
-      toast('Message sent successfully!');
-      setInputValue('')
-    }, 2000);
-  }
-
-  return (
-    <section className="w-full h-dvh bg-instagram">
-      <Toaster />
-      {/* content */}
-      <div className="w-full h-full flex justify-center items-center p-4">
-        <form className="flex w-full sm:w-fit flex-col">
-          <label htmlFor=""></label>
-          <input type="text" placeholder="Write a message here secretly..." value={inputValue} onChange={(e) => handleChangeInput(e)} />
-
-          <div className="w-full flex justify-end mt-5">
-            <button type="button" className="inline-flex h-12 items-center justify-center rounded-md bg-oceanic pl-5 pr-6 font-medium transition active:scale-110 gap-2" onClick={handleSendAction}>
-              {!isLoading ? (
-                <><PlaneIcon />Send Message</>
-              ) : (
-                <><div className="animate-spin"><Spinner /></div><span>Sending Message...</span></>
-              )}
-              </button>
-          </div>
-                
-
-        </form>
-      </div>
-    </section>
-  )
+            {/* component */}
+            <Toaster />
+        </div>
+    )
 }
 
-export default Home
+export default Page
