@@ -7,7 +7,7 @@ const Page = () => {
         <div className="w-full h-dvh p-4 bg-instagram flex items-center justify-center">
             <div className="w-full p-4 bg-white/30 backdrop-blur-sm border border-zinc-200 rounded-lg">
                 <div className="">
-                    <h1 className="text-center font-semibold text-xl">Confes.In</h1>
+                    <h1 className="text-center font-semibold text-xl">Confes.In </h1>
                     <h3 className="mt-3 font-normal">Selamat datang di Confes.In. Kirim ungkapanmu sekarang tanpa ketahuan!</h3>
                 </div>
 
